@@ -1,7 +1,63 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+	background-size: 1920px 1080px;
+	background-position: top;
+    margin: 0;
 }
-h1 {
-    color: blue;
+a {
+	text-decoration: none;
+	color: black;
 }
+h1,
+h2,
+p {
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+.container {
+	width: 1318px;
+	margin: 0 auto;
+}
+.header {
+	top: 0;
+	position: sticky;
+	background-color: #e6dad9;
+}
+.header-placeholder {
+    height: 107px; 
+    background-color: #e6dad9;
+}
+.header .container {
+	background-image: url('./img/bg-header.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-left: 75px;
+	padding-right: 75px;
+}
+.nav {
+	display: flex;
+	align-items: baseline;
+}
+.header-logo {
+	font-weight: 400px;
+	font-size: 70px;
+	line-height: 94px;
+	font-family: 'Abril Fatface';
+	padding-left: 45px;
+	margin-right: 157px;
+}
+.h-list {
+	display: flex;
+	justify-content: center;
+	gap: 35px;
+}
+.h-link {
+	font-size: 30px;
+	font-family: 'Abyssinica SIL';
+}
+
+
+
+
+

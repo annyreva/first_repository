@@ -57,6 +57,39 @@ ul {
 	font-family: 'Abyssinica SIL';
 }
 
+/* about */
+.about {
+    background-color: #e6dad9;
+    padding-bottom: 212px;
+}
+.about .container {
+    display: flex;
+    padding-left: 75px;
+    padding-right: 75px;
+    height: 655px;
+}
+.right-side {
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    padding-top: 55px;
+    padding-bottom: 42px;
+    padding-left: 74px;
+    padding-right: 74px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.about-title {
+    font-weight: 400;
+    font-size: 80px;
+    font-family: 'Abril Fatface';
+    margin-bottom: 51px;
+}
+.about-text {
+    font-family: 'Abyssinica SIL';
+    font-size: 25px;
+    text-align: center;
+}
 
 
 

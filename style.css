@@ -251,7 +251,6 @@ ul {
 
 /*projects*/
 .projects {
-	padding: 20px;
 	text-align: center;
 	font-family: 'Abyssinica SIL';
 	font-size: 25px;
@@ -297,4 +296,13 @@ ul {
 	margin: 10px 400px;
 }
 
-
+/*footer*/
+footer {
+    text-align: center;
+}
+.footer-text {
+    margin-top: 50px;
+}
+.horizontal-line {
+    border-top: 1px solid #5D5B5B;
+}

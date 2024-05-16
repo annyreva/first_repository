@@ -249,3 +249,45 @@ ul {
 	border-radius: 5px;
 }
 
+/*projects*/
+.projects {
+	padding: 20px;
+	text-align: center;
+	font-family: 'Abyssinica SIL';
+	font-size: 25px;
+}
+.projects .slider {
+	position: relative;
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+.projects .slides {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+.projects .slide {
+	min-width: 100%;
+	box-sizing: border-box;
+}
+.projects .slide img {
+	width: 90%;
+	height: 90%;
+}
+.projects .prev,
+.projects .next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+}
+.projects .prev {
+	left: 0;
+}
+.projects .next {
+	right: 0;
+}

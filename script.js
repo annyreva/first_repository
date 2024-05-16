@@ -22,60 +22,79 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Показываем информацию для первого элемента каждого списка по умолчанию
-infoBlocks[0].style.display = 'block';
-infoSecondBlocks[0].style.display = 'block';
-infoThirdBlocks[0].style.display = 'block';
+    infoBlocks[0].style.display = 'block';
+    infoSecondBlocks[0].style.display = 'block';
+    infoThirdBlocks[0].style.display = 'block';
 
-// Обработчики клика для первого списка
-skillsListItems.forEach(function (item) {
-    item.addEventListener('click', function (event) {
-        event.stopPropagation();
-        // Получаем информацию о навыке, на который кликнули
-        const info = this.querySelector('.info');
-        // Скрываем информацию о других навыках
-        infoBlocks.forEach(function (block) {
-            if (block !== info) {
-                block.style.display = 'none';
-            }
+    // Обработчики клика для первого списка
+    skillsListItems.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            event.stopPropagation();
+            // Получаем информацию о навыке, на который кликнули
+            const info = this.querySelector('.info');
+            // Скрываем информацию о других навыках
+            infoBlocks.forEach(function (block) {
+                if (block !== info) {
+                    block.style.display = 'none';
+                }
+            });
+            // Показываем информацию о навыке, на который кликнули
+            info.style.display = 'block';
         });
-        // Показываем информацию о навыке, на который кликнули
-        info.style.display = 'block';
     });
-});
 
-// Обработчики клика для второго списка
-skillsListItems.forEach(function (item) {
-    item.addEventListener('click', function (event) {
-        event.stopPropagation();
-        // Получаем информацию о навыке, на который кликнули
-        const info = this.querySelector('.second-info');
-        // Скрываем информацию о других навыках
-        infoSecondBlocks.forEach(function (block) {
-            if (block !== info) {
-                block.style.display = 'none';
-            }
+    // Обработчики клика для второго списка
+    skillsListItems.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            event.stopPropagation();
+            // Получаем информацию о навыке, на который кликнули
+            const info = this.querySelector('.second-info');
+            // Скрываем информацию о других навыках
+            infoSecondBlocks.forEach(function (block) {
+                if (block !== info) {
+                    block.style.display = 'none';
+                }
+            });
+            // Показываем информацию о навыке, на который кликнули
+            info.style.display = 'block';
         });
-        // Показываем информацию о навыке, на который кликнули
-        info.style.display = 'block';
     });
-});
 
-// Обработчики клика для третьего списка
-skillsListItems.forEach(function (item) {
-    item.addEventListener('click', function (event) {
-        event.stopPropagation();
-        // Получаем информацию о навыке, на который кликнули
-        const info = this.querySelector('.third-info');
-        // Скрываем информацию о других навыках
-        infoThirdBlocks.forEach(function (block) {
-            if (block !== info) {
-                block.style.display = 'none';
-            }
+    // Обработчики клика для третьего списка
+    skillsListItems.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            event.stopPropagation();
+            // Получаем информацию о навыке, на который кликнули
+            const info = this.querySelector('.third-info');
+            // Скрываем информацию о других навыках
+            infoThirdBlocks.forEach(function (block) {
+                if (block !== info) {
+                    block.style.display = 'none';
+                }
+            });
+            // Показываем информацию о навыке, на который кликнули
+            info.style.display = 'block';
         });
-        // Показываем информацию о навыке, на который кликнули
-        info.style.display = 'block';
     });
-});
 
+    //слайдеры
+    let currentIndex = 0
+
+    const slides = document.querySelector('.slides')
+    const totalSlides = document.querySelectorAll('.slide').length
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides
+        updateSlider()
+    })
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides
+        updateSlider()
+    })
+
+    function updateSlider() {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`
+    }
 
 })

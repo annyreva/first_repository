@@ -1,5 +1,5 @@
 body {
-	background-size: 1920px 1080px;
+	max-width: 100%;
 	background-position: top;
 	margin: 0;
 	font-family: 'Abyssinica SIL';
@@ -16,7 +16,7 @@ p {
 h3 {
 	font-family: 'Abril Fatface';
 	font-size: 35px;
-	margin-top: 65px;
+    font-weight: 400;
 }
 .titles-wrapper {
 	display: flex; /* Располагаем элементы в строку */
@@ -28,7 +28,7 @@ ul {
 	list-style: none;
 }
 .container {
-	width: 1318px;
+	max-width: 1318px;
 	margin: 0 auto;
 }
 .header {
@@ -43,6 +43,7 @@ ul {
 }
 .header .container {
 	background-image: url('./img/bg-header.jpg');
+    block-size: 1168px 655px;
 	background-repeat: no-repeat;
 	background-position: center;
 	padding-left: 75px;
@@ -89,7 +90,6 @@ ul {
 	padding-left: 74px;
 	padding-right: 74px;
 	display: flex;
-	align-items: center;
 	flex-direction: column;
 }
 .about-title {
@@ -101,7 +101,7 @@ ul {
 .about-text {
 	font-family: 'Abyssinica SIL';
 	font-size: 25px;
-	text-align: center;
+	text-align: left;
 }
 
 /*skills*/
@@ -109,9 +109,8 @@ ul {
 	font-weight: 400;
 	font-size: 80px;
 	font-family: 'Abril Fatface';
-	margin-bottom: 51px;
+    margin-bottom: 50px;
 	text-align: center;
-	margin-bottom: 100px;
 }
 .skills {
 	background-image: url('./img/bg-header.jpg');
@@ -154,7 +153,7 @@ ul {
 	left: 470px;
 }
 .info:not(:first-child) {
-	top: 360px;
+	top: 290px;
 	display: none;
 }
 
@@ -166,7 +165,7 @@ ul {
 }
 .second-info:not(:first-child) {
 	display: none;
-	top: 970px;
+	top: 870px;
 }
 
 .third-info {
@@ -177,7 +176,7 @@ ul {
 }
 .third-info:not(:first-child) {
 	display: none;
-	top: 1600px;
+	top: 1470px;
 }
 
 .skills-soft {
@@ -193,7 +192,7 @@ ul {
 .soft-skills,
 .language {
 	background-color: #e6dad9;
-	padding-bottom: 100px;
+	padding-bottom: 80px;
 }
 .language .container {
 	display: flex;
@@ -207,6 +206,7 @@ ul {
 	float: right; 
 	margin-top: 10px;
 }
+
 
 /*education*/
 .education {
@@ -232,3 +232,20 @@ ul {
 .education-item:not(:last-child) {
 	margin-bottom: 136px;
 }
+
+/*certificates*/
+.certificates {
+	padding: 20px;
+	font-family: 'Abyssinica SIL';
+	font-size: 25px;
+}
+.certificates details {
+	margin: 20px;
+}
+.certificates summary {
+	cursor: pointer;
+	padding: 20px;
+	background-color: #b5b1b1;
+	border-radius: 5px;
+}
+

@@ -207,3 +207,28 @@ ul {
 	float: right; 
 	margin-top: 10px;
 }
+
+/*education*/
+.education {
+	padding-bottom: 220px;
+}
+.edu-span {
+	font-size: 25px;
+	font-weight: 600;
+}
+.edu-text {
+	font-size: 25px;
+	display: block;
+	width: 852px;
+}
+.education-item {
+	display: flex;
+	gap: 145px;
+}
+.education-list {
+	padding-left: 92px;
+	padding-right: 92px;
+}
+.education-item:not(:last-child) {
+	margin-bottom: 136px;
+}

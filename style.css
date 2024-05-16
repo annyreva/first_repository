@@ -1,7 +1,8 @@
 body {
 	background-size: 1920px 1080px;
 	background-position: top;
-    margin: 0;
+	margin: 0;
+	font-family: 'Abyssinica SIL';
 }
 a {
 	text-decoration: none;
@@ -11,6 +12,17 @@ h1,
 h2,
 p {
 	margin: 0;
+}
+h3 {
+	font-family: 'Abril Fatface';
+	font-size: 35px;
+	margin-top: 65px;
+}
+.titles-wrapper {
+	display: flex; /* Располагаем элементы в строку */
+	justify-content: space-between;
+	padding-left: 78px;
+	width: 930px;
 }
 ul {
 	list-style: none;
@@ -23,10 +35,11 @@ ul {
 	top: 0;
 	position: sticky;
 	background-color: #e6dad9;
+	z-index: 20000;
 }
 .header-placeholder {
-    height: 107px; 
-    background-color: #e6dad9;
+	height: 107px;
+	background-color: #e6dad9;
 }
 .header .container {
 	background-image: url('./img/bg-header.jpg');
@@ -59,38 +72,138 @@ ul {
 
 /* about */
 .about {
-    background-color: #e6dad9;
-    padding-bottom: 212px;
+	background-color: #e6dad9;
+	padding-bottom: 212px;
 }
 .about .container {
-    display: flex;
-    padding-left: 75px;
-    padding-right: 75px;
-    height: 655px;
+	display: flex;
+	padding-left: 75px;
+	padding-right: 75px;
+	height: 655px;
 }
 .right-side {
-    background-image: url('./img/background.jpg');
-    background-size: cover;
-    padding-top: 55px;
-    padding-bottom: 42px;
-    padding-left: 74px;
-    padding-right: 74px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+	background-image: url('./img/background.jpg');
+	background-size: cover;
+	padding-top: 55px;
+	padding-bottom: 42px;
+	padding-left: 74px;
+	padding-right: 74px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 .about-title {
-    font-weight: 400;
-    font-size: 80px;
-    font-family: 'Abril Fatface';
-    margin-bottom: 51px;
+	font-weight: 400;
+	font-size: 80px;
+	font-family: 'Abril Fatface';
+	margin-bottom: 51px;
 }
 .about-text {
-    font-family: 'Abyssinica SIL';
-    font-size: 25px;
-    text-align: center;
+	font-family: 'Abyssinica SIL';
+	font-size: 25px;
+	text-align: center;
 }
 
+/*skills*/
+.skills-title {
+	font-weight: 400;
+	font-size: 80px;
+	font-family: 'Abril Fatface';
+	margin-bottom: 51px;
+	text-align: center;
+	margin-bottom: 100px;
+}
+.skills {
+	background-image: url('./img/bg-header.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.skills .container {
+	position: relative;
+	padding-bottom: 300px;
+	padding-right: 78px;
+}
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+.skills-list li {
+	display: flex;
+	align-items: center;
+	margin-bottom: 23px;
+	cursor: pointer;
+}
+.skills-list img {
+	max-width: 100px;
+	height: 72px;
+	margin-right: 400px; 
+	margin-left: 80px;
+}
+.info-container {
+	display: flex;
+	flex-direction: column; 
+}
+.info.show {
+	display: block;
+}
 
+.info {
+	font-family: 'Abyssinica SIL';
+	font-size: 30px;
+	position: absolute;
+	left: 470px;
+}
+.info:not(:first-child) {
+	top: 360px;
+	display: none;
+}
 
+.second-info {
+	font-family: 'Abyssinica SIL';
+	font-size: 30px;
+	position: absolute;
+	left: 470px;
+}
+.second-info:not(:first-child) {
+	display: none;
+	top: 970px;
+}
 
+.third-info {
+	font-family: 'Abyssinica SIL';
+	font-size: 30px;
+	position: absolute;
+	left: 470px;
+}
+.third-info:not(:first-child) {
+	display: none;
+	top: 1600px;
+}
+
+.skills-soft {
+	font-family: 'Abyssinica SIL';
+	font-size: 25px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	width: 700px;
+	gap: 30px;
+	margin-left: 150px;
+}
+.soft-skills,
+.language {
+	background-color: #e6dad9;
+	padding-bottom: 100px;
+}
+.language .container {
+	display: flex;
+	flex-direction: column;
+}
+
+.rectangle {
+	width: 800px; 
+	height: 460px; 
+	background-color: #e6dad9; 
+	float: right; 
+	margin-top: 10px;
+}

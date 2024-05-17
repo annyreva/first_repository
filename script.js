@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const skillsListItems = document.querySelectorAll('.skills-list li')
+    const programmingItems = document.querySelectorAll('.skills-list:nth-of-type(1) li');
+    const webDevItems = document.querySelectorAll('.skills-list:nth-of-type(2) li');
+    const designItems = document.querySelectorAll('.skills-list:nth-of-type(3) li');
 	const infoBlocks = document.querySelectorAll('.info')
 	const infoSecondBlocks = document.querySelectorAll('.second-info')
 	const infoThirdBlocks = document.querySelectorAll('.third-info')
@@ -26,54 +28,58 @@ document.addEventListener('DOMContentLoaded', function () {
     infoSecondBlocks[0].style.display = 'block';
     infoThirdBlocks[0].style.display = 'block';
 
-    // Обработчики клика для первого списка
-    skillsListItems.forEach(function (item) {
-        item.addEventListener('click', function (event) {
-            event.stopPropagation();
-            // Получаем информацию о навыке, на который кликнули
-            const info = this.querySelector('.info');
-            // Скрываем информацию о других навыках
-            infoBlocks.forEach(function (block) {
-                if (block !== info) {
-                    block.style.display = 'none';
-                }
-            });
-            // Показываем информацию о навыке, на который кликнули
-            info.style.display = 'block';
+    // Переменные для хранения индексов последних выбранных элементов каждого списка
+    let lastSelectedIndex = 0;
+    let lastSelectedSecondIndex = 0;
+    let lastSelectedThirdIndex = 0;
+
+    // Функция для обновления подсветки
+    function updateSelection(listItems, lastSelectedIndex) {
+        listItems.forEach((item, index) => {
+            if (index === lastSelectedIndex) {
+                item.querySelector('img').classList.add('selected');
+            } else {
+                item.querySelector('img').classList.remove('selected');
+            }
+        });
+    }
+
+    // Инициализация подсветки первых элементов
+    programmingItems[0].querySelector('img').classList.add('selected');
+    webDevItems[0].querySelector('img').classList.add('selected');
+    designItems[0].querySelector('img').classList.add('selected');
+
+    // Функция для обработки клика по элементам списка навыков
+    function handleSkillListClick(infoBlocks, clickedInfoBlock, index, lastSelectedIndex, listItems) {
+        // Скрыть все информационные блоки
+        infoBlocks.forEach(function(block) {
+            block.style.display = 'none';
+        });
+
+        // Отобразить кликнутый информационный блок
+        clickedInfoBlock.style.display = 'block';
+
+        // Обновляем индекс последнего выбранного элемента и подсветку
+        updateSelection(listItems, index);
+        return index;
+    }
+
+    // Обработчики клика для каждого списка навыков
+    programmingItems.forEach(function(item, index) {
+        item.addEventListener('click', function() {
+            lastSelectedIndex = handleSkillListClick(infoBlocks, item.querySelector('.info'), index, lastSelectedIndex, programmingItems);
         });
     });
 
-    // Обработчики клика для второго списка
-    skillsListItems.forEach(function (item) {
-        item.addEventListener('click', function (event) {
-            event.stopPropagation();
-            // Получаем информацию о навыке, на который кликнули
-            const info = this.querySelector('.second-info');
-            // Скрываем информацию о других навыках
-            infoSecondBlocks.forEach(function (block) {
-                if (block !== info) {
-                    block.style.display = 'none';
-                }
-            });
-            // Показываем информацию о навыке, на который кликнули
-            info.style.display = 'block';
+    webDevItems.forEach(function(item, index) {
+        item.addEventListener('click', function() {
+            lastSelectedSecondIndex = handleSkillListClick(infoSecondBlocks, item.querySelector('.second-info'), index, lastSelectedSecondIndex, webDevItems);
         });
     });
 
-    // Обработчики клика для третьего списка
-    skillsListItems.forEach(function (item) {
-        item.addEventListener('click', function (event) {
-            event.stopPropagation();
-            // Получаем информацию о навыке, на который кликнули
-            const info = this.querySelector('.third-info');
-            // Скрываем информацию о других навыках
-            infoThirdBlocks.forEach(function (block) {
-                if (block !== info) {
-                    block.style.display = 'none';
-                }
-            });
-            // Показываем информацию о навыке, на который кликнули
-            info.style.display = 'block';
+    designItems.forEach(function(item, index) {
+        item.addEventListener('click', function() {
+            lastSelectedThirdIndex = handleSkillListClick(infoThirdBlocks, item.querySelector('.third-info'), index, lastSelectedThirdIndex, designItems);
         });
     });
 

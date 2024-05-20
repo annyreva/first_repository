@@ -1,106 +1,116 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const programmingItems = document.querySelectorAll('.skills-list:nth-of-type(1) li');
-    const webDevItems = document.querySelectorAll('.skills-list:nth-of-type(2) li');
-    const designItems = document.querySelectorAll('.skills-list:nth-of-type(3) li');
-	const infoBlocks = document.querySelectorAll('.info')
-	const infoSecondBlocks = document.querySelectorAll('.second-info')
-	const infoThirdBlocks = document.querySelectorAll('.third-info')
-    const navLinks = document.querySelectorAll('.h-link');
-
-    // Обходим каждую ссылку
-    navLinks.forEach(link => {
-        // Добавляем обработчик события для клика
-        link.addEventListener('click', event => {
-            // Отменяем стандартное поведение ссылки
-            event.preventDefault();
-            
-            // Получаем целевую секцию для скролла
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            // Прокручиваем к целевой секции с плавной анимацией
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        });
+function updateExperience(element) {
+    // Remove 'selected' class from all skill elements
+    const skillsList = element.closest(".skills-list");
+    skillsList.querySelectorAll("li").forEach((el) => {
+      el.classList.remove("selected");
     });
-
-    // Показываем информацию для первого элемента каждого списка по умолчанию
-    infoBlocks[0].style.display = 'block';
-    infoSecondBlocks[0].style.display = 'block';
-    infoThirdBlocks[0].style.display = 'block';
-
-    // Переменные для хранения индексов последних выбранных элементов каждого списка
-    let lastSelectedIndex = 0;
-    let lastSelectedSecondIndex = 0;
-    let lastSelectedThirdIndex = 0;
-
-    // Функция для обновления подсветки
-    function updateSelection(listItems, lastSelectedIndex) {
-        listItems.forEach((item, index) => {
-            if (index === lastSelectedIndex) {
-                item.querySelector('img').classList.add('selected');
-            } else {
-                item.querySelector('img').classList.remove('selected');
-            }
-        });
+  
+    // Add 'selected' class to the clicked element
+    element.classList.add("selected");
+  
+    const skill = element.getAttribute("data-skill");
+    const parentDiv = element.closest(".list_1");
+    const experienceLanguageElement = parentDiv.querySelector(
+      ".experience-language"
+    );
+    const experienceDescriptionElement = parentDiv.querySelector(
+      ".experience-description"
+    );
+  
+    experienceLanguageElement.textContent = skill;
+  
+    switch (skill) {
+      case "C++":
+        experienceDescriptionElement.textContent =
+          "Description of experience C++.";
+        break;
+      case "Java":
+        experienceDescriptionElement.textContent =
+          "Description of experience Java.";
+        break;
+      case "C":
+        experienceDescriptionElement.textContent = 
+          "Description of experience C.";
+        break;
+      case "Python":
+        experienceDescriptionElement.textContent =
+          "Description of experience Python.";
+        break;
+      case "HTML":
+        experienceDescriptionElement.textContent =
+          "Description of experience HTML.";
+        break;
+      case "JavaScript":
+        experienceDescriptionElement.textContent =
+          "Description of experience JavaScript.";
+        break;
+      case "TypeScript":
+        experienceDescriptionElement.textContent =
+          "Description of experience TypeScript.";
+        break;
+      case "Angular":
+        experienceDescriptionElement.textContent =
+          "Description of experience Angular.";
+        break;
+      case "Figma":
+        experienceDescriptionElement.textContent =
+          "Description of experience Figma.";
+        break;
+      case "Blender":
+        experienceDescriptionElement.textContent =
+          "Description of experience Blender.";
+        break;
+      default:
+        experienceDescriptionElement.textContent = 
+          "Description of experience ";
     }
-
-    // Инициализация подсветки первых элементов
-    programmingItems[0].querySelector('img').classList.add('selected');
-    webDevItems[0].querySelector('img').classList.add('selected');
-    designItems[0].querySelector('img').classList.add('selected');
-
-    // Функция для обработки клика по элементам списка навыков
-    function handleSkillListClick(infoBlocks, clickedInfoBlock, index, lastSelectedIndex, listItems) {
-        // Скрыть все информационные блоки
-        infoBlocks.forEach(function(block) {
-            block.style.display = 'none';
-        });
-
-        // Отобразить кликнутый информационный блок
-        clickedInfoBlock.style.display = 'block';
-
-        // Обновляем индекс последнего выбранного элемента и подсветку
-        updateSelection(listItems, index);
-        return index;
+  }
+  
+  // Initialize the first skill as selected by default
+  document.addEventListener("DOMContentLoaded", () => {
+    const firstSkills = document.querySelectorAll(".skills-list li:first-child");
+    firstSkills.forEach((skill) => {
+      updateExperience(skill);
+    });
+  });
+  
+  //scroll
+  const navLinks = document.querySelectorAll('.h-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      
+      const targetId = link.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  
+  //sliders
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    let currentIndex = 0;
+  
+    function showSlide(index) {
+      const slidesContainer = document.getElementById("slides");
+      const slideWidth = slides[0].clientWidth;
+      slidesContainer.style.transform = `translateX(${-index * slideWidth}px)`;
     }
-
-    // Обработчики клика для каждого списка навыков
-    programmingItems.forEach(function(item, index) {
-        item.addEventListener('click', function() {
-            lastSelectedIndex = handleSkillListClick(infoBlocks, item.querySelector('.info'), index, lastSelectedIndex, programmingItems);
-        });
-    });
-
-    webDevItems.forEach(function(item, index) {
-        item.addEventListener('click', function() {
-            lastSelectedSecondIndex = handleSkillListClick(infoSecondBlocks, item.querySelector('.second-info'), index, lastSelectedSecondIndex, webDevItems);
-        });
-    });
-
-    designItems.forEach(function(item, index) {
-        item.addEventListener('click', function() {
-            lastSelectedThirdIndex = handleSkillListClick(infoThirdBlocks, item.querySelector('.third-info'), index, lastSelectedThirdIndex, designItems);
-        });
-    });
-
-    //слайдеры
-    let currentIndex = 0
-
-    const slides = document.querySelector('.slides')
-    const totalSlides = document.querySelectorAll('.slide').length
-
-    document.querySelector('.next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalSlides
-        updateSlider()
-    })
-
-    document.querySelector('.prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides
-        updateSlider()
-    })
-
-    function updateSlider() {
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`
+  
+    function showNextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
     }
-
-})
+  
+    function showPrevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    }
+  
+    nextBtn.addEventListener("click", showNextSlide);
+    prevBtn.addEventListener("click", showPrevSlide);
+});
+  

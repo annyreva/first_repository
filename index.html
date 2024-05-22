@@ -1,365 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Anna Reva</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.css"
-      integrity="sha512-gA2Bvu0/hw4oj0Lp8ZHjK+o3S4BE5m8d/wNVy6ktKLhHKPpWLQwv9ixzuWirWOakoJqlBdePq2NhoCaUOQ5npQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <a href="./index.html" class="header-logo">A.R.</a>
-          <ul class="h-list">
-            <li class="h-item">
-              <a class="h-link" href="#skills">skills</a>
-            </li>
-            <li class="h-item">
-              <a class="h-link" href="#education">education</a>
-            </li>
-            <li class="h-item">
-              <a class="h-link" href="#certificates">certificates</a>
-            </li>
-            <li class="h-item">
-              <a class="h-link" href="#projects">projects</a>
-            </li>
-            <li class="h-item">
-              <a class="h-link" href="#contact">contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Anna Reva</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div>
+                <a href="./index.html">A.R.</a>
+                <nav>
+                    <a class="h-link" href="#skills">skills</a>
+                    <a class="h-link" href="#education">education</a>
+                    <a class="h-link" href="#project">projects</a>
+                    <a class="h-link" href="#contact">contact</a>
+                </nav>
+                <div></div>
+    </div>
     </header>
-    <div class="header-placeholder"></div>
-
-    <main>
-      <section id="about" class="about">
-        <div class="container">
-          <div class="cont">
-            <div class="about-content">
-              <div class="left-side">
-                <img src="./img/Anna_Reva.jpg" width="468" height="655" />
-              </div>
-              <div class="right-side">
-                <h2 class="about-title">Anna Reva</h2>
-                <p class="about-text">
-                  As a self-motivated and hard-working individual, I am deeply
-                  committed to pursuing a science degree. My analytical and
-                  critical thinking skills enable me to identify and efficiently
-                  address any challenges that come my way. Known for being
-                  dependable and responsible, I take initiative and pride myself
-                  on effective communication. These personal traits seamlessly
-                  integrate with my professional pursuits, allowing me to close
-                  knowledge gaps swiftly and provide substantial value to both
-                  employers and collaborative teams.
-                </p>
-              </div>
+    <section id="me">
+        <div class="block pbt">
+            <div class="content">
+                <img src="./assets/Anna_Reva.jpg" alt="Reva Anna">
+                <div class="text">
+                    <h1>Anna Reva</h1>
+                    <h2>As a self-motivated and hard-working individual, I am deeply committed to pursuing a science
+                        degree. My analytical and critical thinking skills enable me to identify and efficiently
+                        address any challenges that come my way. Known for being dependable and responsible, I take
+                        initiative and pride myself on effective communication. These personal traits seamlessly
+                        integrate with my professional pursuits, allowing me to close knowledge gaps swiftly and
+                        provide substantial value to both employers and collaborative teams.</h2>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-
-      <section id="skills" class="section skills">
-        <div class="container">
-          <h1 class="title">HARD SKILLS</h1>
-          <div class="list_1">
-            <div class="fix">
-              <ul class="skills-list">
-                <h3 style="padding-bottom: 10px">Programming</h3>
-                <li onclick="updateExperience(this)" data-skill="C++" class="selected">
-                  <img src="./img/C++.png" />
-                </li>
-                <li onclick="updateExperience(this)" data-skill="Java">
-                  <img src="./img/Java.png" />
-                </li>
-                <li onclick="updateExperience(this)" data-skill="C">
-                  <img src="./img/C.png" />
-                </li>
-                <li onclick="updateExperience(this)" data-skill="Python">
-                  <img src="./img/Python.png" />
-                </li>
-              </ul>
+    </section>
+    <section id="skills">
+        <div class="block">
+            <h2 class="title">
+                HARD SKILLS
+            </h2>
+            <div class="block__content">
+                <div class="panel">
+                    <h3>Programming</h3>
+                    <div class="buttons">
+                        <button class="active" data-experience="Basic proficiency in C++.">
+                            <img src="./assets/C++.png" alt="C++">
+                        </button>
+                        <button data-experience="Basic proficiency in Java.">
+                            <img src="./assets/Java.png" alt="Java">
+                        </button>
+                        <button data-experience="Basic proficiency in C#.">
+                            <img src="./assets/C.png" alt="C#">
+                        </button>
+                        <button data-experience="Basic proficiency in Python.">
+                            <img src="./assets/Python.png" alt="Python">
+                        </button>
+                    </div>
+                    <h3 class="mt40">Experience:</h3>
+                    <textarea id="experience-textarea" rows="4" cols="50">Basic proficiency in C++.</textarea>
+                </div>
+                <div class="panel">
+                    <h3>Web Development</h3>
+                    <div class="buttons">
+                        <button class="active" data-experience="Basic proficiency in HTML.">
+                            <img src="./assets/html.png" alt="HTML">
+                        </button>
+                        <button data-experience="Basic proficiency in CSS.">
+                            <img src="./assets/css.png" alt="CSS">
+                        </button>
+                        <button data-experience="Basic proficiency in JavaScript.">
+                            <img src="./assets/js.png" alt="JavaScript">
+                        </button>
+                        <button data-experience="Basic proficiency in TypeScript.">
+                            <img src="./assets/ts.png" alt="TypeScript">
+                        </button>
+                        <button data-experience="Basic proficiency in Angular.">
+                            <img src="./assets/angular.png" alt="Angular">
+                        </button>
+                    </div>
+                    <h3 class="mt40">Experience:</h3>
+                    <textarea id="experience2-textarea" rows="4" cols="50">Basic proficiency in HTML.</textarea>
+                </div>
+                <div class="panel">
+                    <h3>Design and Visualization</h3>
+                    <div class="buttons">
+                        <button class="active" data-experience="Basic proficiency in Figma.">
+                            <img src="./assets/figma.png" alt="Figma">
+                        </button>
+                        <button data-experience="Basic proficiency in Blender.">
+                            <img src="./assets/blender.png" alt="Blender">
+                        </button>
+                    </div>
+                    <h3 class="mt40">Experience:</h3>
+                    <textarea id="experience3-textarea" rows="4" cols="50">Basic proficiency in Figma.</textarea>
+                </div>
             </div>
-            <div data-experience="programming">
-              <div class="fix2">
-                <h3>Experience</h3>
-                <div class="info2">
-                  <p class="text">
-                    Basic proficiency in
-                    <span class="experience-language">C++</span>
-                  </p>
-                  <p class="experience-description">
-                    Description of experience C++.
-                  </p>
-                </div>
-              </div>
+        </div>
+    </section>
+    <section id="soft">
+        <div class="block">
+            <h2 class="title">
+                SOFT SKILLS
+            </h2>
+            <div class="block__content">
+                <ul class="list list__soft">
+                    <li>
+                        -Proficient in a variety of artistic mediums, including painting, drawing, and sculpture;
+                    </li>
+                    <li>
+                        -Strong conceptual and creative thinking abilities;
+                    </li>
+                    <li>
+                        -Design skills;
+                    </li>
+                    <li>
+                        -Creative skills.
+                    </li>
+                </ul>
             </div>
-          </div>
-
-          <div class="list_1">
-            <div class="fix">
-              <ul class="skills-list">
-                <h3 style="padding-bottom: 10px">Web Development</h3>
-                <li onclick="updateExperience(this)" data-skill="HTML" class="selected">
-                  <img src="./img/html.png" />
-                </li>
-                <li onclick="updateExperience(this)" data-skill="JavaScript">
-                  <img src="./img/js.png" />
-                </li>
-                <li onclick="updateExperience(this)" data-skill="TypeScript">
-                  <img src="./img/ts.png" />
-                </li>
-                <li onclick="updateExperience(this)" data-skill="Angular">
-                  <img src="./img/angular.png" />
-                </li>
-              </ul>
+        </div>
+    </section>
+    <section id="lang">
+        <div class="block">
+            <h2 class="title">
+                LANGUAGE
+            </h2>
+            <div class="block__content">
+                <ul class="list list__lang">
+                    <li>
+                        Ukrainian — native
+                    </li>
+                    <li>
+                        Russian — fluent
+                    </li>
+                    <li>
+                        English — upper-intermediate
+                    </li>
+                    <li>
+                        French — pre-intermediate
+                    </li>
+                </ul>
             </div>
-            <div data-experience="web-development">
-              <div class="fix2">
-                <h3>Experience</h3>
-                <div class="info2">
-                  <p>
-                    Basic proficiency in
-                    <span class="experience-language">HTML</span>
-                  </p>
-                  <p class="experience-description">
-                    Description of experience HTML.
-                  </p>
-                </div>
-              </div>
+        </div>
+    </section>
+    <section id="education" >
+        <div class="block">
+            <h2 class="title">
+                EDUCATION
+            </h2>
+            <div class="block__content">
+                <ul class="list__edu">
+                    <li>
+                        <span>2021-now</span>
+                        <h3>Currently studying at the Faculty of Information Systems and Technologies on the third
+                            course of the bachelor's programme at Taras Shevchenko National University of Kyiv,
+                            Ukraine. I do my degree in programming technologies of the Internet of Things.</h3>
+                    </li>
+                    <li>
+                        <span>2010-2021</span>
+                        <h3>Attended an art school for 10 years, honing skills in various artistic disciplines.
+                            Developed a deep understanding of artistic principles, techniques, and mediums,
+                            fostering creativity and innovation.</h3>
+                    </li>
+                    <li>
+                        <span>2010-2021</span>
+                        <h3>Completed 11 years of education in the Gymnasium №13, placed in Poltava, achieving high
+                            grades and demonstrating a strong commitment to academic excellence.</h3>
+                    </li>
+                </ul>
             </div>
-          </div>
-
-          <div class="list_1">
-            <div class="fix">
-              <ul class="skills-list">
-                <h3 style="padding-bottom: 10px">Design and Visualization</h3>
-                <li onclick="updateExperience(this)" data-skill="Figma" class="selected">
-                  <img src="./img/figma.png" />
-                </li>
-                <li onclick="updateExperience(this)" data-skill="Blender">
-                  <img src="./img/blender.png" />
-                </li>
-              </ul>
-            </div>
-            <div data-experience="design-visualization">
-              <div class="fix2">
-                <h3>Experience</h3>
-                <div class="info2">
-                  <p>
-                    Basic proficiency in
-                    <span class="experience-language">Figma</span>
-                  </p>
-                  <p class="experience-description">
-                    Description of experience Figma.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-
-      <section class="color section">
-        <div class="container">
-          <h1 class="title">SOFT SKILLS</h1>
-          <div class="skills-soft">
-            <p>
-              -Proficient in a variety of artistic mediums, including painting,
-              drawing, and sculpture;
-            </p>
-            <p>-Strong conceptual and creative thinking abilities;</p>
-            <p>-Design skills;</p>
-            <p>-Creative skills.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="color section">
-        <div class="container">
-          <h1 class="title">LANGUAGE</h1>
-          <div class="skills-soft">
-            <p>Ukrainian — native</p>
-            <p>Russian — fluent</p>
-            <p>English — upper-intermediate</p>
-            <p>French — pre-intermediate</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="education" class="section education">
-        <div class="container">
-          <h1 class="title">EDUCATION</h1>
-          <ul class="education-list">
-            <li class="education-item">
-              <span class="edu-span">2021-now</span>
-              <p class="edu-text">
-                Currently studying at the Faculty of Information Systems and
-                Technologies on the third course of the bachelor's programme at
-                Taras Shevchenko National University of Kyiv, Ukraine. I do my
-                degree in programming technologies of the Internet of Things.
-              </p>
-            </li>
-            <li class="education-item">
-              <span class="edu-span">2010-2021</span>
-              <p class="edu-text">
-                Attended an art school for 10 years, honing skills in various
-                artistic disciplines. Developed a deep understanding of artistic
-                principles, techniques, and mediums, fostering creativity and
-                innovation.
-              </p>
-            </li>
-            <li class="education-item">
-              <span class="edu-span">2010-2021</span>
-              <p class="edu-text">
-                Completed 11 years of education in the Gymnasium №13, placed in
-                Poltava, achieving high grades and demonstrating a strong
-                commitment to academic excellence.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="certificates" class="section certificates color">
-        <div class="container">
-          <h1 class="title">CERTIFICATES</h1>
-          <details>
-            <summary>Database Foundations</summary>
-            <p><img src="./img/database.jpg" /></p>
-          </details>
-          <details>
-            <summary>
-              Construction, security and automation of corporate networks
-              (CCNAv7)
-            </summary>
-            <p><img src="./img/ccna1.jpg" /></p>
-          </details>
-          <details>
-            <summary>
-              Basics of routing, switching and wireless networks (CCNAv7)
-            </summary>
-            <p><img src="./img/ccna2.jpg" /></p>
-          </details>
-          <details>
-            <summary>Cybersecurity Essentials</summary>
-            <p><img src="./img/cyber_s.jpg" /></p>
-          </details>
-          <details>
-            <summary>IT Essentials</summary>
-            <p><img src="./img/it_es.jpg" /></p>
-          </details>
-          <details>
-            <summary>Introduction to Networks (CCNAv7)</summary>
-            <p><img src="./img/ccna3.jpg" /></p>
-          </details>
-          <details>
-            <summary>Introduction to IoT</summary>
-            <p><img src="./img/iot.jpg" /></p>
-          </details>
-        </div>
-      </section>
-
-      <section id="projects" class="section projects">
-        <div class="container">
-          <h1 class="title">PROJECTS</h1>
-          <div class="slider">
-            <div class="slides" id="slides">
-              <div class="slide">
-                <img src="./img/project1.jpg" />
-                <p>Project number 1</p>
-              </div>
-              <div class="slide">
-                <img src="./img/project2.jpg" />
-                <p>Project number 2</p>
-              </div>
-              <div class="slide">
-                <img src="./img/project3.jpg" />
-                <p>Project number 3</p>
-              </div>
-              <div class="slide">
-                <img src="./img/project4.jpg" />
-                <p>Project number 4</p>
-              </div>
-            </div>
-
-            <button class="prev" id="prevBtn">&#10094;</button>
-            <button class="next" id="nextBtn">&#10095;</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact color">
-        <div class="container">
-          <h1 class="title">CONTACT</h1>
-          <div class="list_last">
-            <ul class="contact-list">
-              <li>
-                <img src="./img/phone.png" />
-                <div class="contact-text">
-                  <p>+380992820588, +4917632390548</p>
-                </div>
-              </li>
-              <li>
-                <img src="./img/email.png" />
-                <div class="contact-text">
-                  <p>revaanna998@gmail.com, revanna172@gmail.com</p>
-                </div>
-              </li>
-              <li>
-                <img src="./img/linkedin.png" />
-                <div class="contact-text">
-                  <a href="https://linkedin.com/in/anna-reva">Reva Anna</a>
-                </div>
-              </li>
-              <li>
-                <img src="./img/telegram.png" />
-                <div class="contact-text">
-                  <p>@annyreva</p>
-                </div>
-              </li>
-              <li>
-                <img src="./img/address.png" />
-                <div class="contact-text">
-                  <p>Kassel, Germany</p>
-                </div>
-              </li>
-              <li>
-                <img src="./img/github.png" />
-                <div class="contact-text">
-                  <a href="https://github.com/annyreva">annyreva</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
+    </section>
     
-    <div class="color">
-      <footer class="color container">
-        <div class="horizontal-line"></div>
-        <p class="footer-text">&copy; 2024 Anna Reva</p>
-      </footer>
+    <section id="cert">
+        <div class="block">
+            <h2 class="title">
+                CERTIFICATES
+            </h2>
+            <div class="block__content">
+              <details>
+                <summary>Database Foundations</summary>
+                <p><img src="./assets/database.jpg" alt="Database Foundations"/></p>
+              </details>
+              <details>
+                <summary>
+                Construction, security and automation of corporate networks
+                (CCNAv7)
+                </summary>
+                <p><img src="./assets/ccna1.jpg" alt="Construction, security and automation of corporate networks"/></p>
+              </details>
+              <details>
+                <summary>
+                Basics of routing, switching and wireless networks (CCNAv7)
+                </summary>
+                <p><img src="./assets/ccna2.jpg" alt="Basics of routing, switching and wireless networks"/></p>
+              </details>
+              <details>
+                <summary>Cybersecurity Essentials</summary>
+                <p><img src="./assets/cyber_s.jpg" alt="Cybersecurity Essentials"/></p>
+              </details>
+              <details>
+                <summary>IT Essentials</summary>
+                <p><img src="./assets/it_es.jpg" alt="IT Essentials"/></p>
+              </details>
+              <details>
+                <summary>Introduction to Networks (CCNAv7)</summary>
+                <p><img src="./assets/ccna3.jpg" alt="Introduction to Networks"/></p>
+              </details>
+              <details>
+                <summary>Introduction to IoT</summary>
+                <p><img src="./assets/iot.jpg" alt="Introduction to IoT"/></p>
+              </details>
+              </div>
+          </div>
+    </section>
+    <section id="project">
+        <div class="block">
+            <h2 class="title">
+                PROJECTS
+            </h2>
+            <div class="block__content">
+                <div class="slider">
+                    <div class="imgs">
+                        <div class="img" style="left: 0;">
+                            <span>Project  1</span>
+                        </div>
+                        <div class="img">
+                            <span>Project 2</span>
+                        </div>
+                        <div class="img">
+                            <span>Project 3</span>
+                        </div>
+                        <div class="img">
+                            <span>Project 4</span>
+                        </div>
+                    </div>
+                    <div class="dots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="block">
+            <h2 class="title">
+                CONTACT
+            </h2>
+            <div class="block__content">
+                <ul class="list__contact">
+                    <li>
+                        <img src="./assets/phone.png" alt="phone">
+                        <div>
+                            <a href="tel:+380992820588">+380992820588</a>
+                            <a href="tel:+491752859438">+491752859438</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/email.png" alt="email">
+                        <div>
+                            <a href="mailto:revaanna998@gmail.com">revaanna998@gmail.com</a>
+                            <a href="mailto:revaanna172@gmail.com">revaanna172@gmail.com</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/linkedin.png" alt="linkedin">
+                        <a href="https://www.linkedin.com/in/anna-reva-5895872b7/">Reva Anna</a>
+                    </li>
+                    <li>
+                        <img src="./assets/telegram.png" alt="telegram">
+                        <a href="https://t.me/annyreva">@annyreva</a>
+                    </li>
+                    <li>
+                        <img src="./assets/address.png" alt="address">
+                        <a href="https://www.google.com/maps/place/Kassel,+Germany/@51.3147705,9.2958089,11z/data=!3m1!4b1!4m6!3m5!1s0x47bb3f4e9f7a6c1d:0x2f84633d58221747!8m2!3d51.3127114!4d9.4797461!16zL20vMGJrdjA?entry=ttu">
+                          Kassel, Germany</a>
+                    </li>
+                    <li>
+                        <img src="./assets/github.png" alt="github">
+                        <a href="https://github.com/annyreva">annyreva</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="block">
+            <h3>© 2024 Anna Reva</h3>
+        </div>
+    </footer>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <script src="./scripts/exp.js"></script>
+    <script src="./scripts/slider.js"></script>
+    <script src="./scripts/scroll.js"></script>
+</body>
+
 </html>

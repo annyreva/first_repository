@@ -1,0 +1,133 @@
+/* asaid, burger menu */
+.burger {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+}
+.burger__line {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    transition: 0.3s all linear;
+    border-radius: 10px;
+}
+.burger__line_first {
+    top: 0;
+}
+.burger__line_second,
+.burger__line_third {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    margin-left: 19px;
+}
+.burger__line_fourth {
+    bottom: 0;
+    width: 75%;
+    margin-left: 10px;
+}
+.burger_active .burger__line_first,
+.burger_active .burger__line_fourth {
+    opacity: 0;
+}
+.burger_active .burger__line_second {
+    margin-left: 0px;
+    transform: translateY(-50%) rotate(45deg);
+    width: 100%;
+}
+.burger_active .burger__line_third {
+    transform: translateY(-50%) rotate(-45deg);
+    width: 100%;
+    margin-left: 0px;
+}
+.asaid {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 40px 20px;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: -50px;
+    width: 0;
+    height: 100vh;
+    padding-bottom: 150px;
+    background: #ECE3E2;
+    animation-duration: 1s;
+    z-index: 1000000;
+    animation-name: slidein;
+}
+.asaid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-right: 50px;
+}
+.asaid-header > h2 {
+    font-size: 30px;
+    font-family: "Abril Fatface", serif;
+}
+.asaid .header__menu-list {
+    padding-top: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: 30px;
+    line-height: 37px;
+    width: 100%;
+}
+.asaid .header__menu-list .header__menu-item a:hover {
+    text-decoration: underline;
+}
+.asaid .header__menu-list .header__menu-item a {
+    color: #000000;
+    font-size: 20px;
+}
+.actives {
+    width: 300px !important;
+    transition: 1s all;
+}
+.menubar {
+    display: none;
+}
+
+/* burger menu animation*/
+@keyframes slidein {
+    from {
+        transform: translateY(-2%);
+    }
+    to {
+        transform: translateY(2%);
+    }
+}
+@-moz-keyframes slidein {
+    from {
+        transform: translateY(-2%);
+    }
+    to {
+        transform: translateY(2%);
+    }
+}
+@-webkit-keyframes slidein {
+    from {
+        transform: translateY(-2%);
+    }
+    to {
+        transform: translateY(2%);
+    }
+}
+@-o-keyframes slidein {
+    from {
+        transform: translateY(-2%);
+    }
+    to {
+        transform: translateY(2%);
+    }
+}

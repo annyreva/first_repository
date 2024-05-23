@@ -1,0 +1,122 @@
+/* adaptive design */
+@media screen and (max-width: 1100px) {
+    .content{
+        flex-direction: column;
+    }   
+    .content img {
+        height: 600px;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .menubar{
+        display: block;
+    }
+    header > div > nav {
+        display: none;
+    }
+    header > div {
+        height: 80px;
+        padding: 0px 15px;
+    }
+    
+    header > div  > a {
+        font-size: 30px;
+    }
+    section{
+        padding: 0px 15px;
+    }
+    header{
+        padding: 0px 15px;
+        
+    }
+    footer{
+        padding: 0px 15px;
+    }
+    .block__content {
+        padding: 50px 15px;
+    }
+    .text > h1 {
+        font-size: 30px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+    .text > h2 {
+        font-size: 20px;
+    }
+    .pbt{
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+    .title {
+        font-size: 30px;
+        height: 55px;
+    }
+    .panel > h3 {
+        font-size: 20px;
+    } 
+    .panel > textarea {
+        font-size: 20px;
+    }
+    .list {
+        font-size: 20px;
+    }
+    .list__edu li {
+        font-size: 20px;
+    }
+    .accordion-title {
+        font-size: 20px;
+    }
+    .list__contact li {
+        font-size: 20px;
+    }
+    .text {
+        padding: 50px 15px;
+    }
+    footer h3 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .content img {
+        height: 300px;
+        width: 200px;
+    }
+    .buttons > button {
+        width: 30px;
+        height: 50px;
+        padding: 2px;
+    }
+    .buttons > button > img {
+        max-width: 100%; 
+    }
+    .slider, .slider .imgs{
+        max-height: 300px;
+    }
+    .list__contact li img{
+        width: 40px;
+        height: 40px;
+    }
+    .list__edu{
+        gap: 30px;
+    }
+    .list__edu li {
+        gap: 10px;
+    }
+    .list__edu li h3{
+        font-style: 16px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .content img {
+        height: 300px;
+        width: 100%;
+    }
+    .list__contact li {
+        font-size: 14px;
+    }
+
+}

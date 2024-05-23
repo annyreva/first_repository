@@ -1,0 +1,60 @@
+/* hard skills */
+.panel{
+    padding-top: 100px;
+}
+.panel > h3{
+    font-family: "Abril Fatface", serif;
+    font-size: 35px;
+}
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+.buttons > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 115px;
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+.active{
+    background-color:rgba(39, 150, 224, 0.612);
+    border-radius: 10px;
+    border: 1px solid rgb(87, 87, 244);
+}
+.panel > textarea {
+    background-color: #ECE3E2;
+    margin-top: 30px;
+    width: 100%;
+    height: 260px;
+    padding: 35px 25px;
+    font-size: 30px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+.mt40{
+    margin-top: 40px;
+}
+.block__content .panel:first-child{
+    padding-top: 0px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 30px;
+    line-height: 33px;
+    margin: 0 auto;
+} 
+
+/* soft skills */
+.list__soft{
+    max-width: 850px;
+}
+
+/* language */
+.list__lang{
+    max-width: 450px;
+}

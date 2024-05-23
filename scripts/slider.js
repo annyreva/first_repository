@@ -1,5 +1,6 @@
 //projects
 const sliders = document.querySelectorAll(".slider");
+// interval between switching images
 const interval = 2800;
 // set animDuration 
 const animDuration = 600;
@@ -16,11 +17,11 @@ for (let i = 0; i < sliders.length; ++i) {
   let startX;
 
   // Creates dots and add listeners to them
-  for (let i = 0; i < sliderImgs.length; ++i) {
+  for (let j = 0; j < sliderImgs.length; ++j) {
     const dot = document.createElement("div");
     dot.classList.add("dot");
     dots.appendChild(dot);
-    dot.addEventListener("click", dotClick.bind(null, i), false);
+    dot.addEventListener("click", dotClick.bind(null, j), false);
   }
 
   const allDots = dots.querySelectorAll(".dot");
@@ -31,11 +32,11 @@ for (let i = 0; i < sliders.length; ++i) {
     animateSlider();
     sliderImgs[0].style.left = "";
     intrvl = setInterval(animateSlider, interval);
-  }, interval - animDuration);   
+  }, interval - animDuration);
 
   // Animates images
   function animateSlider(nextImg, right) {
-    if (!nextImg)
+    if (nextImg === undefined)
       nextImg = currImg + 1 < sliderImgs.length ? currImg + 2 : 1;
 
     --nextImg;
@@ -44,8 +45,7 @@ for (let i = 0; i < sliders.length; ++i) {
     if (!right) {
       sliderImgs[nextImg].style.animationName = "leftNext";
       sliderImgs[currImg].style.animationName = "leftCurr";
-    } 
-    else {
+    } else {
       sliderImgs[nextImg].style.animationName = "rightNext";
       sliderImgs[currImg].style.animationName = "rightCurr";
     }
@@ -53,16 +53,15 @@ for (let i = 0; i < sliders.length; ++i) {
     prevImg = currImg;
     currImg = nextImg;
 
-    currDot = allDots[currImg];
+    const currDot = allDots[currImg];
     currDot.classList.add("active-dot");
-    prevDot = allDots[prevImg];
+    const prevDot = allDots[prevImg];
     prevDot.classList.remove("active-dot");
   }
 
   // Decides if animate to left or right and highlights clicked dot
   function dotClick(num) {
-    if (num == currImg)
-      return false;
+    if (num === currImg) return false;
 
     clearTimeout(timeout);
     clearInterval(intrvl);

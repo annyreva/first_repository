@@ -1,0 +1,21 @@
+/* contact */
+.list__contact{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 0 auto;
+    max-width: 350px;
+}
+.list__contact li {
+    display: flex;
+    font-size: 30px;
+    gap: 40px;
+}
+.list__contact li img{
+    width: 80px;
+}
+.list__contact div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

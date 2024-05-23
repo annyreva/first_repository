@@ -14,14 +14,13 @@ for (let i = 0; i < sliders.length; ++i) {
   let prevImg = sliderImgs.length - 1;
   let intrvl;
   let timeout;
-  let startX;
 
   // Creates dots and add listeners to them
-  for (let j = 0; j < sliderImgs.length; ++j) {
+  for (let i = 0; i < sliderImgs.length; ++i) {
     const dot = document.createElement("div");
     dot.classList.add("dot");
     dots.appendChild(dot);
-    dot.addEventListener("click", dotClick.bind(null, j), false);
+    dot.addEventListener("click", dotClick.bind(null, i), false);
   }
 
   const allDots = dots.querySelectorAll(".dot");
@@ -32,11 +31,11 @@ for (let i = 0; i < sliders.length; ++i) {
     animateSlider();
     sliderImgs[0].style.left = "";
     intrvl = setInterval(animateSlider, interval);
-  }, interval - animDuration);
+  }, interval - animDuration);   
 
-  // Animates images
+  //Animates images
   function animateSlider(nextImg, right) {
-    if (nextImg === undefined)
+    if (!nextImg)
       nextImg = currImg + 1 < sliderImgs.length ? currImg + 2 : 1;
 
     --nextImg;
@@ -45,7 +44,8 @@ for (let i = 0; i < sliders.length; ++i) {
     if (!right) {
       sliderImgs[nextImg].style.animationName = "leftNext";
       sliderImgs[currImg].style.animationName = "leftCurr";
-    } else {
+    } 
+    else {
       sliderImgs[nextImg].style.animationName = "rightNext";
       sliderImgs[currImg].style.animationName = "rightCurr";
     }
@@ -53,15 +53,16 @@ for (let i = 0; i < sliders.length; ++i) {
     prevImg = currImg;
     currImg = nextImg;
 
-    const currDot = allDots[currImg];
+    currDot = allDots[currImg];
     currDot.classList.add("active-dot");
-    const prevDot = allDots[prevImg];
+    prevDot = allDots[prevImg];
     prevDot.classList.remove("active-dot");
   }
 
-  // Decides if animate to left or right and highlights clicked dot
+  //Decides if animate to left or right and highlights clicked dot
   function dotClick(num) {
-    if (num === currImg) return false;
+    if (num == currImg)
+      return false;
 
     clearTimeout(timeout);
     clearInterval(intrvl);
@@ -73,24 +74,4 @@ for (let i = 0; i < sliders.length; ++i) {
 
     intrvl = setInterval(animateSlider, interval);
   }
-
-  // Handle touch events for mobile devices
-  slider.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-    clearTimeout(timeout);
-    clearInterval(intrvl);
-  });
-
-  slider.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diffX = endX - startX;
-
-    if (diffX > 50) {
-      animateSlider(currImg + 1, true);
-    } else if (diffX < -50) {
-      animateSlider(currImg + 1);
-    }
-
-    intrvl = setInterval(animateSlider, interval);
-  });
 }

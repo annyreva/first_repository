@@ -1,6 +1,5 @@
 //projects
 const sliders = document.querySelectorAll(".slider");
-// interval between switching images
 const interval = 2800;
 // set animDuration 
 const animDuration = 600;

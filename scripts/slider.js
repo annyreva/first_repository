@@ -14,6 +14,7 @@ for (let i = 0; i < sliders.length; ++i) {
   let prevImg = sliderImgs.length - 1;
   let intrvl;
   let timeout;
+  let startX;
 
   // Creates dots and add listeners to them
   for (let i = 0; i < sliderImgs.length; ++i) {
@@ -33,7 +34,7 @@ for (let i = 0; i < sliders.length; ++i) {
     intrvl = setInterval(animateSlider, interval);
   }, interval - animDuration);   
 
-  //Animates images
+  // Animates images
   function animateSlider(nextImg, right) {
     if (!nextImg)
       nextImg = currImg + 1 < sliderImgs.length ? currImg + 2 : 1;
@@ -59,7 +60,7 @@ for (let i = 0; i < sliders.length; ++i) {
     prevDot.classList.remove("active-dot");
   }
 
-  //Decides if animate to left or right and highlights clicked dot
+  // Decides if animate to left or right and highlights clicked dot
   function dotClick(num) {
     if (num == currImg)
       return false;
@@ -74,4 +75,24 @@ for (let i = 0; i < sliders.length; ++i) {
 
     intrvl = setInterval(animateSlider, interval);
   }
+
+  // Handle touch events for mobile devices
+  slider.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    clearTimeout(timeout);
+    clearInterval(intrvl);
+  });
+
+  slider.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diffX = endX - startX;
+
+    if (diffX > 50) {
+      animateSlider(currImg + 1, true);
+    } else if (diffX < -50) {
+      animateSlider(currImg + 1);
+    }
+
+    intrvl = setInterval(animateSlider, interval);
+  });
 }
